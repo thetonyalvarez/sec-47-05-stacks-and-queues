@@ -11,12 +11,23 @@ describe("enqueue", function() {
     expect(queue.enqueue(10)).toBe(undefined);
     expect(queue.first.val).toBe(10);
     expect(queue.last.val).toBe(10);
+    expect(queue.size).toBe(1);
     queue.enqueue(100);
     expect(queue.first.val).toBe(10);
     expect(queue.last.val).toBe(100);
+    expect(queue.size).toBe(2);
     queue.enqueue(1000);
     expect(queue.first.val).toBe(10);
     expect(queue.last.val).toBe(1000);
+    expect(queue.size).toBe(3);
+    queue.enqueue(10000);
+    expect(queue.first.val).toBe(10);
+    expect(queue.last.val).toBe(10000);
+    expect(queue.size).toBe(4);
+    queue.enqueue(100000);
+    expect(queue.first.val).toBe(10);
+    expect(queue.last.val).toBe(100000);
+    expect(queue.size).toBe(5);
   });
 });
 
@@ -38,7 +49,7 @@ describe("dequeue", function() {
   });
 });
 
-describe("peek", function() {
+describe.only("peek", function() {
   it("returns the value at the start of the queue", function() {
     queue.enqueue(3);
     expect(queue.peek()).toBe(3);
