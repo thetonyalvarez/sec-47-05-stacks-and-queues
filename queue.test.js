@@ -49,7 +49,7 @@ describe("dequeue", function() {
   });
 });
 
-describe.only("peek", function() {
+describe("peek", function() {
   it("returns the value at the start of the queue", function() {
     queue.enqueue(3);
     expect(queue.peek()).toBe(3);

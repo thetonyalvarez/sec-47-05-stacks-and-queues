@@ -11,12 +11,19 @@ describe("push", function() {
     expect(stack.push(10)).toBe(undefined);
     expect(stack.first.val).toBe(10);
     expect(stack.last.val).toBe(10);
+    expect(stack.size).toBe(1);
     stack.push(100);
     expect(stack.first.val).toBe(100);
     expect(stack.last.val).toBe(10);
+    expect(stack.size).toBe(2);
     stack.push(1000);
     expect(stack.first.val).toBe(1000);
     expect(stack.last.val).toBe(10);
+    expect(stack.size).toBe(3);
+    stack.push(10000);
+    expect(stack.first.val).toBe(10000);
+    expect(stack.last.val).toBe(10);
+    expect(stack.size).toBe(4);
   });
 });
 
@@ -47,7 +54,7 @@ describe("peek", function() {
   });
 });
 
-describe("isEmpty", function() {
+describe.only("isEmpty", function() {
   it("returns true for empty stacks", function() {
     expect(stack.isEmpty()).toBe(true);
   });
