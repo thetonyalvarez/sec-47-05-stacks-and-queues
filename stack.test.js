@@ -54,7 +54,7 @@ describe("peek", function() {
   });
 });
 
-describe.only("isEmpty", function() {
+describe("isEmpty", function() {
   it("returns true for empty stacks", function() {
     expect(stack.isEmpty()).toBe(true);
   });
